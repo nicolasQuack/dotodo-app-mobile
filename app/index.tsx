@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TaskInput } from '@/components'
+import { SearchInput, TaskInput } from '@/components'
 import { FlatList, StyleSheet, View } from 'react-native'
 import { useTodosContext } from '@/context'
 import { Task } from '@/@types'
@@ -21,6 +21,7 @@ export default function home() {
     <View style={styles.container} >
       <View style={styles.taskInputWrapper}>
         <TaskInput />
+        <SearchInput value={searchText} updateValue={setSearchText}/>
       </View>
       <FlatList data={myTasks} renderItem={renderTaskCard} contentContainerStyle={styles.list} />
     </View>
