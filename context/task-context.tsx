@@ -59,7 +59,7 @@ export const TodosProvider: FC<PropsWithChildren> = function ({ children }) {
     }
 
     function searchTasks(text: string) {
-        setFilteredTasks(tasks.filter((task) => task.description.includes(text)))
+        setFilteredTasks(tasks.filter((task) => task.description.toLowerCase().includes(text.toLowerCase())))
     }
 
     return (
