@@ -1,4 +1,4 @@
-import Typography from '@/components/Typography';
+import {Typography} from '@/components';
 import { Link, Stack } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
