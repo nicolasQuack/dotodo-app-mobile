@@ -20,7 +20,7 @@ export default function TaskInput() {
     }
 
     return (
-        <Searchbar style={styles.searchbar} value={value} onChangeText={setValue} icon={'plus'} placeholder={'Qual é a sua tarefa hoje?'} placeholderTextColor={colors.outline} right={() => null} iconColor={hasText ? colors.primary : undefined} onIconPress={hasText ? addTask
+        <Searchbar style={styles.searchbar} value={value} onChangeText={setValue} icon={'plus'} placeholder={'Qual é a sua tarefa hoje?'} onSubmitEditing={(e) => e.nativeEvent.text !== "" ? addTask() : null} returnKeyType='send' placeholderTextColor={colors.outline} right={() => null} iconColor={hasText ? colors.primary : undefined} onIconPress={hasText ? addTask
             : undefined} />
     )
 }
