@@ -53,11 +53,13 @@ function RootLayoutNav() {
 
   const isDark = colorScheme === 'dark'
 
+  const appTheme = isDark ? DarkTheme : LightTheme
+
   return (
-    <PaperProvider theme={isDark ? DarkTheme : LightTheme}>
+    <PaperProvider theme={appTheme}>
       <ThemeProvider value={isDark ? NavigationDarkTheme : NavigationLightTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.surfaceVariant } }}>
+          <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24 }, headerTitleAlign: 'center' }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         </Stack>
       </ThemeProvider>
