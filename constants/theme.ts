@@ -78,7 +78,7 @@ const DarkTheme: MD3Theme = {
     onTertiary: "rgb(0, 47, 102)",
     tertiaryContainer: "rgb(6, 69, 142)",
     onTertiaryContainer: "rgb(215, 226, 255)",
-    error: "rgb(255, 180, 171)",
+    error: "rgb(186, 26, 26)",
     onError: "rgb(105, 0, 5)",
     errorContainer: "rgb(147, 0, 10)",
     onErrorContainer: "rgb(255, 180, 171)",
