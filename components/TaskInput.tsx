@@ -16,6 +16,7 @@ export default function TaskInput() {
 
     function addTask() {
         createTask(value)
+        setValue("")
     }
 
     return (
