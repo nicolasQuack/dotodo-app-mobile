@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useColorScheme } from '@/components/useColorScheme';
 import { PaperProvider } from 'react-native-paper';
 import { DarkTheme, LightTheme, NavigationDarkTheme, NavigationLightTheme } from '../constants/theme'
+import { TodosProvider } from '@/context';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,10 +59,12 @@ function RootLayoutNav() {
   return (
     <PaperProvider theme={appTheme}>
       <ThemeProvider value={isDark ? NavigationDarkTheme : NavigationLightTheme}>
-        <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.secondaryContainer } }}>
-          <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24, color: appTheme.colors.onBackground }, headerTitleAlign: 'center' }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        </Stack>
+        <TodosProvider>
+          <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.secondaryContainer } }}>
+            <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24, color: appTheme.colors.onBackground }, headerTitleAlign: 'center' }} />
+            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+          </Stack>
+        </TodosProvider>
       </ThemeProvider>
     </PaperProvider>
   );
