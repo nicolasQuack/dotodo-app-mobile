@@ -17,7 +17,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: 'index',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -61,7 +61,7 @@ function RootLayoutNav() {
       <ThemeProvider value={isDark ? NavigationDarkTheme : NavigationLightTheme}>
         <TodosProvider>
           <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.secondaryContainer } }}>
-            <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24, color: appTheme.colors.onBackground }, headerTitleAlign: 'center' }} />
+            <Stack.Screen name="index" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24, color: appTheme.colors.onBackground }, headerTitleAlign: 'center' }} />
             <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
           </Stack>
         </TodosProvider>
