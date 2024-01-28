@@ -58,8 +58,8 @@ function RootLayoutNav() {
   return (
     <PaperProvider theme={appTheme}>
       <ThemeProvider value={isDark ? NavigationDarkTheme : NavigationLightTheme}>
-        <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.surfaceVariant } }}>
-          <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24 }, headerTitleAlign: 'center' }} />
+        <Stack screenOptions={{ headerStyle: { backgroundColor: appTheme.colors.secondaryContainer } }}>
+          <Stack.Screen name="home" options={{ headerTitle: 'DotoDo', headerTitleStyle: { fontFamily: 'Pacifico', fontSize: 24, color: appTheme.colors.onBackground }, headerTitleAlign: 'center' }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         </Stack>
       </ThemeProvider>
