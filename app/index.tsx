@@ -3,7 +3,7 @@ import { TaskInput } from '@/components'
 import { FlatList, StyleSheet, View } from 'react-native'
 import { useTodosContext } from '@/context'
 import { Task } from '@/@types'
-import {TaskCard} from '@/components'
+import { TaskCard } from '@/components'
 
 export default function home() {
 
@@ -20,7 +20,7 @@ export default function home() {
   return (
     <View style={styles.container} >
       <View style={styles.taskInputWrapper}>
-      <TaskInput value={searchText} updateValue={setSearchText} />
+        <TaskInput />
       </View>
       <FlatList data={myTasks} renderItem={renderTaskCard} contentContainerStyle={styles.list} />
     </View>
@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 24,
   },
-  taskInputWrapper:{
-    paddingHorizontal:16,
+  taskInputWrapper: {
+    paddingHorizontal: 16,
   },
   list: {
     paddingBottom: 32,
-    paddingHorizontal:16,
+    paddingHorizontal: 16,
   }
 })

@@ -1,16 +1,12 @@
 import { useTodosContext } from '@/context'
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet } from 'react-native';
 import { Searchbar, useTheme } from 'react-native-paper'
 
-interface Props {
-    value: string;
-    updateValue: (newValue: string) => void;
-}
 
-export default function TaskInput({ value, updateValue }: Props) {
+export default function TaskInput() {
 
-
+    const [value, setValue] = useState("")
 
     const { colors } = useTheme()
 
@@ -23,13 +19,13 @@ export default function TaskInput({ value, updateValue }: Props) {
     }
 
     return (
-        <Searchbar style={styles.searchbar} value={value} onChangeText={updateValue} icon={'plus'} placeholder={'Qual é a sua tarefa hoje?'} placeholderTextColor={colors.outline} right={() => null} iconColor={hasText ? colors.primary : undefined} onIconPress={hasText ? addTask
+        <Searchbar style={styles.searchbar} value={value} onChangeText={setValue} icon={'plus'} placeholder={'Qual é a sua tarefa hoje?'} placeholderTextColor={colors.outline} right={() => null} iconColor={hasText ? colors.primary : undefined} onIconPress={hasText ? addTask
             : undefined} />
     )
 }
 
 const styles = StyleSheet.create({
-    searchbar:{
-        marginBottom:16
+    searchbar: {
+        marginBottom: 16
     }
 })
