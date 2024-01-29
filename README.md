@@ -5,9 +5,7 @@ Aplicativo de tarefas desenvolvido com [Expo](https://expo.dev/).
 
 
 
-## Deploy
-
-Rodando o projeto localmente:
+## Rodando localmente
 
 ```bash
   git clone https://github.com/nicolasQuack/dotado-app-mobile.git
